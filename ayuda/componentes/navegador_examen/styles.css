@@ -1,0 +1,70 @@
+/* Reset y variables */
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --muted:#556070;
+  --accent:#2b6cdf;
+  --radius:12px;
+  --container:940px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg),#ffffff);
+  color:#122028;
+  padding:28px;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Layout */
+body > h1{
+  text-align:center;
+  color:var(--accent);
+  margin-bottom:18px;
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* Contenedor central (si se añade) */
+.wrapper{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:12px;
+}
+
+/* Párrafos */
+p{
+  color:var(--muted);
+  line-height:1.6;
+  margin:10px auto 18px;
+  max-width:900px;
+  padding:0 14px;
+}
+
+/* Estilo para las capturas (se aplica a src que empiezan con "cap") */
+/* Esto sobrescribe los estilos inline más comunes usando !important */
+img[src^="cap"]{
+  display:block !important;
+  margin:14px auto !important;
+  max-width:720px !important;
+  width:80% !important;
+  height:auto !important;
+  border-radius:8px;
+  border:1px solid #e3e7ee;
+  box-shadow:0 8px 22px rgba(18,32,50,0.06);
+}
+
+/* Si hay imágenes pequeñas o queremos más anchura en pantallas grandes */
+@media (min-width:1100px){
+  img[src^="cap"]{width:60% !important}
+}
+
+/* Móvil: mejor ajuste */
+@media (max-width:640px){
+  body{padding:14px}
+  body > h1{font-size:20px}
+  img[src^="cap"]{width:100% !important;max-width:100% !important;margin:10px 0 !important}
+  p{padding:0 8px}
+}

@@ -31,13 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CapaVistaOP">
       <HintPath>..\..\..\Gestión de Salones\Ordenes de Producción - Gerber Asturias\MVC_Ordenes_de_Produccion\CapaVistaOP\bin\Debug\CapaVistaOP.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Controlador_Navegador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Capa_Controlador_Seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\componentes\seguridad\SeguridadMVC\SeguridadMVC\CapaControlador\bin\Debug\Capa_Controlador_Seguridad.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Modelo_Seguridad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Capa_vista_Check_In_Check_out">
       <HintPath>..\..\..\Gestión de Habitaciones\ChekinCheckOut-Brandon Hernandez\MVC-Check_in_Check_out\Capa_vista_Check_In_Check_out\bin\Debug\Capa_vista_Check_In_Check_out.dll</HintPath>
     </Reference>
@@ -56,12 +59,17 @@
     <Reference Include="Capa_Vista_MH">
       <HintPath>..\..\..\Gestión de Salones\Mantenimiento Hoteleria - Fernando Cahuex\Mantenimiento_Hoteleria_MVC\Capa_Vista_MH\bin\Debug\Capa_Vista_MH.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Vista_Navegador, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Capa_Vista_Navegador.dll</HintPath>
+    </Reference>
     <Reference Include="Capa_Vista_Produccion">
       <HintPath>..\..\..\Gestión de Salones\Proceso de Produccion - Sergio Izeppi\Produccion\Capa_Vista_Produccion\bin\Debug\Capa_Vista_Produccion.dll</HintPath>
     </Reference>
     <Reference Include="Capa_Vista_Receta">
       <HintPath>..\..\..\Gestión de Salones\Recetas - Anderson Trigueros\Receta\Capa_Vista_Receta\bin\Debug\Capa_Vista_Receta.dll</HintPath>
     </Reference>
+    <Reference Include="Capa_Vista_Reporteador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Capa_Vista_Reservas_Hotel">
       <HintPath>..\..\..\Gestión de Habitaciones\Reservas de Hotel - Ruben Lopez - Pablo Quiroa\Mvc_Reservas_Hotel\Capa_Vista_Reservas_Hotel\bin\Debug\Capa_Vista_Reservas_Hotel.dll</HintPath>
     </Reference>
@@ -71,9 +79,15 @@
     <Reference Include="Capa_Vista_Seguridad">
       <HintPath>..\..\..\..\..\..\componentes\seguridad\SeguridadMVC\SeguridadMVC\CapaVista\bin\Debug\Capa_Vista_Seguridad.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -83,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Frm_Login_Hoteleria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +114,18 @@
     </Compile>
     <Compile Include="Frm_MDI_Hoteleria.Designer.cs">
       <DependentUpon>Frm_MDI_Hoteleria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Pacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Pacientes.Designer.cs">
+      <DependentUpon>Frm_Pacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Reporte_Paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Reporte_Paciente.Designer.cs">
+      <DependentUpon>Frm_Reporte_Paciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Splash.cs">
       <SubType>Form</SubType>
@@ -109,11 +141,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login_Hoteleria.resx">
       <DependentUpon>Frm_Login_Hoteleria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MDI_Hoteleria.resx">
       <DependentUpon>Frm_MDI_Hoteleria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Pacientes.resx">
+      <DependentUpon>Frm_Pacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Reporte_Paciente.resx">
+      <DependentUpon>Frm_Reporte_Paciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Splash.resx">
       <DependentUpon>Frm_Splash.cs</DependentUpon>
@@ -125,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

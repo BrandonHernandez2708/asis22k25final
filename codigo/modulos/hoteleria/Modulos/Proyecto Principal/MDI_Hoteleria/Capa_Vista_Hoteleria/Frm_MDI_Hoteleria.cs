@@ -256,19 +256,22 @@ namespace Capa_Vista_Hoteleria
             promociones.Show();
         }
 
-        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CerrarFormulariosHijos();
-            Frm_Deaprtamento departamento = new Frm_Deaprtamento();
-            departamento.MdiParent = this;
-            departamento.Show();
-        }
+        
 
         private void asignacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string rutaChm = @"C:\asis2k25p2\ayuda\modulos\hoteleria\ayudahoteleria.chm";
+            string rutaChm = @"C:\asis22k25final\ayuda\modulos\hoteleria\ayudahoteleria.chm";
 
             Help.ShowHelp(this, rutaChm, "MDI.html");
+        }
+
+        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CerrarFormulariosHijos();
+            Frm_Pacientes pacientes = new Frm_Pacientes();
+            pacientes.MdiParent = this;
+            pacientes.Show();
+
         }
     }
 }
